@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -17,7 +19,12 @@ import com.firstApp.main.domain.User;
 import com.firstApp.main.domain.UserRepository;
 
 @SpringBootApplication
-public class MainApplication {
+public class MainApplication extends SpringBootServletInitializer {
+	
+	@Override
+	protected SpringApplicationBuilder configure (SpringApplicationBuilder application) {
+		return application.sources(MainApplication.class);
+	}
 	private static final Logger logger = 
 			LoggerFactory.getLogger(MainApplication.class);
 	@Autowired
