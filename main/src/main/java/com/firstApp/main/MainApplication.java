@@ -27,9 +27,6 @@ public class MainApplication {
 	@Autowired
 	private UserRepository userRepository;
 	
-	//
-	
-
 	public static void main(String[] args) {
 		SpringApplication.run(MainApplication.class, args);
 		logger.info("Hello Sirn William");
