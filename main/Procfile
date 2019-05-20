@@ -1,1 +1,1 @@
-web gunicorn carbackend:MainApplication
+web gunicorn MainApplication:MainApplication
